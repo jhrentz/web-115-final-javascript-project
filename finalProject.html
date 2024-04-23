@@ -2,15 +2,8 @@
 <html lang="en">
 <!--
     John "Harrell" Rentz
-    Date: 4/18/2024
+    Date: 4/23/2024
     WEB-115 Final JavaScript Project
-
-    Remember before submitting:
-    1 - accessibility
-    2 - no plug-ins
-    3 - rubric
-    4 - use github and wcet. open in new window.
-
 -->
 
 <head>
@@ -21,31 +14,32 @@
 </head>
 
 <body>
-    <header id="banner"></header>
-    
+    <section id="top">
+        <img id="logo" src="Logo.jpg" alt="Perfectly Portioned Fitness logo" width="100%">
+        <header id="banner"></header>
+    </section>
+
     <section id="userInfoEntry"></section>
     
     <div id="mealEntry">
 
         <aside id="HarvardPlate">
-            <!-- The following imnage is available for non-commercial use
+            <!-- The following image is available for non-commercial use
                  with the copyright notice as shown below. -->
             <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/7596/7cec12bf-2a37-4975-bba1-008abe0d32c516207266793421.jpg" alt="Harvard Plate" width="100%">
             <p id="HarvardCopyright">Copyright © 2011, Harvard University. For more information about The Healthy Eating Plate, please see The Nutrition Source, Department of Nutrition, Harvard T.H. Chan School of Public Health, <a href="https://www.hsph.harvard.edu/nutritionsource/">thenutritionsource.org</a>, and Harvard Health Publications, <a href="https://www.health.harvard.edu/">health.harvard.edu</a>.</p>
         </aside>
 
-        <section id="menuItems">
-            <h4>MEAL & MENU CREATION</h4>
-            <div id="mealDaySelectors">
-                <div id="mealSelector"></div>
-                <div id="daySelector"></div>
-            </div>
+        <section id="mealMenuCreation">
+            <h1 class="white">MEAL & MENU CREATION</h1>
+            <div id="mealDaySelectors"></div>
+            <div id="buttons"></div>
             <div id="itemEntry"></div>
             <div id="currentMeal"></div>
         </section>
 
     </div>
-    
+
     <script src="projectJS.js"></script>
 
 </body>
