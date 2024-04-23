@@ -1,0 +1,73 @@
+body, p {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#banner {
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #b69a9a;
+  color: #050505;
+  padding: 10px;
+  text-align: center;
+}
+
+#userInfoEntry {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 10px;
+  text-align: center;
+} 
+
+#mealEntry {
+  background-color: #ffffff;
+  color: #f9f8f8;
+  padding: 10px;
+  text-align: center;
+}   
+
+#HarvardPlate {
+    background-color: #c20707;
+    float: left;
+    margin: 0 1.5%;
+    width: 40%;
+  }
+
+#menuItems {
+  background-color: #25cc52;
+  color: black;
+  float: right;
+  margin: 0 1.5%;
+  width: 40%;
+}
+
+#HarvardCopyright {
+    font-family: sans-serif;
+    background-color: #f5b608;
+    color: #050505;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#mealSelector {
+    background-color: cornflowerblue;
+    color: #050505;
+    padding: 20px;
+    text-align: center;
+}
+
+#daySelector {
+    background-color: #b69a9a;
+    color: #050505;
+    padding: 20px;
+    text-align: center;
+}
+
+#currentMeal {
+    background-color: #f5b608;
+    color: #050505;
+    padding: 20px;
+    text-align: center; 
+}
