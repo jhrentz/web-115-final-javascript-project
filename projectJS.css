@@ -1,4 +1,4 @@
-body, p {
+body {
     font-family: monospace;
     font-weight: bold;
     background-color: brown;
@@ -6,26 +6,26 @@ body, p {
 }
 
 p { 
-  background-color: #a98d8d;
-  padding: 10px;
+  background-color: #c2edef;
+  padding: 7px;
   text-align: center;
-  font-size: larger;
-  margin: 1% 1% 1% 1%;
-}    
+  font-size: 16px;
+  margin: 1% 3% 1% 3%;
+} 
 
 #top {
   font-family: sans-serif;
   font-weight: bold;
   background-color: brown;
   color: white;
-  padding: 10px;
+  padding: 1px;
   text-align: center;
 }
 
 #logo {
   background-color: black;
   color: black;
-  padding: 10px;
+  padding: 2px;
   text-align: center;
   max-width: 20%;
   float: left;
@@ -33,57 +33,92 @@ p {
 
 #userInfoEntry {
   background-color: #a98d8d;
-  padding: 10px;
+  padding: 1px;
   text-align: center;
   font-size: larger;
   margin: 1% 1% 1% 23%;
-}    
+} 
+
+#username, #email, #weeklyGoal,
+#mealTypeSelect, #daySelect {
+  background-color: blanchedalmond;
+  color:black;
+  padding: 1;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 1% 1% 1% 1%;
+}
 
 #HarvardPlate {
-    background-color:brown;
+    background-color:#a98d8d;
+    padding: 1px;
     float: left;
     margin: 3% 2% 2% 3%;
     width: 40%;
   }
 
-  #HarvardCopyright {
+#HarvardCopyright {
     font-family: sans-serif;
-    background-color: #a98d8d;
-    padding: 10px;
+    background-color: #c2edef;
+    padding: 1px;
     text-align: center;
     font-size: 0.6em;
 }
 
 #mealMenuCreation {
-  background-color: brown;
+  background-color: #a98d8d;
+  padding: 1px;
   float: right;
   margin: 1% 1% 1% 2%;
   width: 50%;
-  text-align: left;
+  text-align: center;
 }
 
 #mealMenuCreation > h1 {
   text-align: center; 
 }
 
-#mealDaySelectors {
-    background-color:#a98d8d;
-    padding: 20px;
-    text-align: center;
+.buttonLook {
+  background-color: #a98d8d;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15%;
+
 }
 
 #buttons {
-    background-color: #a98d8d;
+  background-color: #c2edef;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 1% 1% 1% 1%;
+  cursor: pointer; 
+}
+
+#mealDaySelectors {
+    background-color:#c2edef;
     padding: 20px;
     text-align: center;
+    margin: 1% 1% 1% 1%;
 }
 
 #currentMeal {
-    background-color: #a98d8d;
+    background-color: #c2edef;
     padding: 20px;
     text-align: center; 
+    margin: 1% 1% 1% 1%;
 }
 
 .white {
-    color: white;ß
+  color: white;
 }
