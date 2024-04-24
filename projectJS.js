@@ -339,7 +339,7 @@ function createMealEntrySection () {
                 break;
         }
         myElement.value = "Enter " + type + ".";
-        myElement.style.width = "80%";
+        myElement.style.width = "50%";
         myParagraph.appendChild(myElement);
     });
 }
