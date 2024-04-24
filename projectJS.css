@@ -2,7 +2,16 @@ body, p {
     font-family: monospace;
     font-weight: bold;
     background-color: brown;
+    color: black;
 }
+
+p { 
+  background-color: #a98d8d;
+  padding: 10px;
+  text-align: center;
+  font-size: larger;
+  margin: 1% 1% 1% 1%;
+}    
 
 #top {
   font-family: sans-serif;
@@ -14,7 +23,7 @@ body, p {
 }
 
 #logo {
-  background-color: #a98d8d;
+  background-color: black;
   color: black;
   padding: 10px;
   text-align: center;
@@ -22,57 +31,55 @@ body, p {
   float: left;
 }
 
-#userInfoEntry, p {
-  background-color: cornflowerblue;
-  color: white;
+#userInfoEntry {
+  background-color: #a98d8d;
   padding: 10px;
-  max-width: 100%;
-  text-align: right;
+  text-align: center;
   font-size: larger;
+  margin: 1% 1% 1% 23%;
 }    
 
 #HarvardPlate {
     background-color:brown;
     float: left;
-    margin: 0 1.5%;
+    margin: 3% 2% 2% 3%;
     width: 40%;
   }
 
   #HarvardCopyright {
     font-family: sans-serif;
-    background-color: orange;
-    color: #050505;
+    background-color: #a98d8d;
     padding: 10px;
     text-align: center;
-    font-size: 0.8em;
-    font-weight: bold;
+    font-size: 0.6em;
 }
 
 #mealMenuCreation {
   background-color: brown;
-  color: black;
   float: right;
-  margin: 0 1.5%;
-  width: 51%;
+  margin: 1% 1% 1% 2%;
+  width: 50%;
+  text-align: left;
+}
+
+#mealMenuCreation > h1 {
+  text-align: center; 
 }
 
 #mealDaySelectors {
-    background-color:rgba(128, 197, 24, 0.838);
-    color: #050505;
+    background-color:#a98d8d;
     padding: 20px;
     text-align: center;
 }
 
 #buttons {
     background-color: #a98d8d;
-    color: #050505;
     padding: 20px;
     text-align: center;
 }
 
 #currentMeal {
-    background-color: rgba(128, 197, 24, 0.838);
-    color: #050505;
+    background-color: #a98d8d;
     padding: 20px;
     text-align: center; 
 }

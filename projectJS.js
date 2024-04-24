@@ -2,6 +2,9 @@
 const generateWebPageButton = document.createElement("input");
 generateWebPageButton.style.display = "none"; // default hidden
 
+const NUM_ROWS = 6;
+const NUM_COLS = 8;
+
 const COLUMN_LABELS = ["Weekly Meals", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const ROW_LABELS = ["Weekly Meals", "Breakfast", "Snack AM", "Lunch", "Snack PM", "Dinner"];
 const ITEM_TYPES = ["Healthy Protein", "Whole Grain", "Vegetable", "Fruit", "Healthy Oil", "Beverage"];
@@ -14,6 +17,12 @@ let healthyOils = [" "]; // holds 35 healthy oil items for weekly meal plan
 let beverages = [" "]; // holds 35 beverage items for weekly meal plan
 let meals = [" "]; // holds 35 meals for weekly meal plan
 
+// Create meal type selection list
+const mealTypeSelect = document.createElement("select");
+
+// Create day selection list
+const daySelect = document.createElement("select");
+
 generateMainPage();
 
 function generateMainPage() {
@@ -23,9 +32,8 @@ function generateMainPage() {
     createStarterMeals();
     createMealEntrySection();
     const myParagraph = document.getElementById("currentMeal");
-    myParagraph.textContent = "Current Meal:";    
-
-    // displayMealPlan();
+    myParagraph.textContent = "Current Meal:"; 
+    getCurrentItemTypes();   
        
 }
 
@@ -106,8 +114,8 @@ function createUserInfoEntry() {
     weeklyGoalParagraph.appendChild(weeklyGoalElement);
 
     // Append the userInfoForm element to the USER INFO ENTRY div
-    userInfoEntryDiv = document.getElementById("userInfoEntry");
-    userInfoEntryDiv.appendChild(userInfoFormElement);
+    userInfoEntrySection = document.getElementById("userInfoEntry");
+    userInfoEntrySection.appendChild(userInfoFormElement);
 
      // Create button paragraph
      var buttonParagraph = document.createElement("p");
@@ -117,7 +125,7 @@ function createUserInfoEntry() {
      var clearButton = document.createElement("input");
      clearButton.type = "button";
      clearButton.id = "clear";
-     clearButton.value = "Clear";
+     clearButton.value = "Clear Data Above";
      buttonParagraph.appendChild(clearButton);
      clearButton.addEventListener('click', clearUserInfo);
      if (emailElement.value === "") {
@@ -131,6 +139,14 @@ function createUserInfoEntry() {
      buttonParagraph.appendChild(generateWebPageButton);
      generateWebPageButton.addEventListener('click',generateUserInfoAndDefaultMenu);
  
+     // Clear weekly menu button
+    const clearWeeklyMenuButton = document.createElement("input");
+    clearWeeklyMenuButton.type = "button";
+    clearWeeklyMenuButton.id = "clearWeeklyMenu";
+    clearWeeklyMenuButton.value = "Clear Weekly Menu";
+    buttonParagraph.appendChild(clearWeeklyMenuButton);
+    clearWeeklyMenuButton.addEventListener('click', clearWeeklyMenu);
+
      // Button for displaying webpage is only visible when a valid email exists
      generateWebPageButton.style.display = "inline";
      emailElement.addEventListener('change', function() {
@@ -173,8 +189,7 @@ function generateUserInfoAndDefaultMenu() {
               "" + weeklyGoal + "<br></p>";     
     
     myText += ("<table border='1'>");
-    const NUM_ROWS = 6;
-    const NUM_COLS = 8;
+
     for (let i = 0; i < NUM_ROWS; i++) {
         for(let j = 0; j < NUM_COLS; j++) {
             if (i === 0 && j === 0) {
@@ -247,7 +262,7 @@ function createStarterMeals() {
     let itemIndex = 0;
     // the following nested loop creates "meal items array" 
     // that acts like a 2D array of meals
-    for(let i = 1; i < 6; i++) {
+    for(let i = 1; i < NUM_ROWS; i++) {
         proteins[i] = [" "];
         wholeGrains[i] = [" "];
         vegetables[i] = [" "];
@@ -255,7 +270,7 @@ function createStarterMeals() {
         healthyOils[i] = [" "];
         beverages[i] = [" "];
         meals[i] = [" "];
-        for(let j = 1; j < 8; j++) {
+        for(let j = 1; j < NUM_COLS; j++) {
             proteins[i][j] = STARTER_MEAL_PLAN[itemIndex];
             itemIndex++;
             wholeGrains[i][j] = STARTER_MEAL_PLAN[itemIndex];
@@ -297,8 +312,6 @@ function createStarterMeals() {
 
 // MENU ITEMS ENTRY
 function createMealEntrySection () {
-        // Create meal type selection list
-        const mealTypeSelect = document.createElement("select");
         // Create options for meal type
         const mealTypes = ["1 - Breakfast", "2 - Snack AM", "3 - Lunch", "4 - Snack PM", "5 - Dinner"];
         mealTypes.forEach((type) => {
@@ -310,9 +323,6 @@ function createMealEntrySection () {
         // Append the meal type selection list to the mealsDiv
         const mealSelector = document.getElementById("mealSelector");
         mealDaySelectors.appendChild(mealTypeSelect);
-
-        // Create day selection list
-        const daySelect = document.createElement("select");
 
         // Create options for days
         const days = ["1 - Monday", "2 - Tuesday", "3 - Wednesday", "4 - Thursday", "5 - Friday", "6 - Saturday", "7 - Sunday"];
@@ -415,21 +425,34 @@ function clearCurrentMeal() {
 }
 
 function addCurrentMeal() {
-    console.log("addCurrentMeal invoked");
     const myParagraph = document.getElementById("currentMeal")
-    console.log(mealTypeSelect.value);
     meal = parseInt(mealTypeSelect.value.substring(0,1));
-    console.log(daySelect.value);
     day = parseInt(daySelect.value.substring(0,1));
-    meals[meal][day] = myParagraph.textContent;
-    console.log(meals[meal][day]);
+    meals[meal][day] = myParagraph.textContent.substring(13);
 }
 
-function displayMealPlan() {
-    for(let i = 1; i < 6; i++) {
-        for(let j = 1; j < 8; j++) {
-            console.log("i = " + i + " j = " + j);
-            console.log(meals[i][j]);
+function clearWeeklyMenu() {
+
+    for(let i = 1; i < NUM_ROWS; i++) {
+        proteins[i] = [" "];
+        wholeGrains[i] = [" "];
+        vegetables[i] = [" "];
+        fruits[i] = [" "];
+        healthyOils[i] = [" "];
+        beverages[i] = [" "];
+        meals[i] = [" "];
+        for(let j = 1; j < NUM_COLS; j++) {
+            meals[i][j] = " ";
         }
-    }               
+    }   
+}
+
+function getCurrentItemTypes() {
+    let myData = [];
+    myData.push(mealTypeSelect.textContent);
+    myData.push(daySelect.textContent);
+    ITEM_TYPES.forEach((type) => {
+        myData.push(document.getElementById(type).value);
+    });
+    myData.push(document.getElementById("currentMeal").textContent);
 }
